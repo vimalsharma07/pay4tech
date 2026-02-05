@@ -26,7 +26,7 @@
                         <path d="M12 6.2L16.5 8.8V13.9L12 16.5L7.5 13.9V8.8L12 6.2Z" stroke="currentColor" stroke-width="1.6" opacity="0.9"/>
                     </svg>
                 </span>
-                <span class="brand__text">{{ config('app.name', 'Payomatix IT') }}</span>
+                <span class="brand__text">{{ config('app.name', 'Pay4Tech IT') }}</span>
             </a>
 
             <nav class="nav" aria-label="Primary">
@@ -466,7 +466,7 @@
                             <path d="M12 6.2L16.5 8.8V13.9L12 16.5L7.5 13.9V8.8L12 6.2Z" stroke="currentColor" stroke-width="1.6" opacity="0.9"/>
                         </svg>
                     </span>
-                    <span class="brand__text">{{ config('app.name', 'Payomatix IT') }}</span>
+                    <span class="brand__text">{{ config('app.name', 'Pay4Tech IT') }}</span>
                 </div>
                 <p class="footer__text">Modern IT solutions with premium UI and optimized performance.</p>
             </div>
@@ -487,7 +487,7 @@
             </div>
         </div>
         <div class="container footer__bottom">
-            <span class="muted">© {{ date('Y') }} {{ config('app.name', 'Payomatix IT') }}. All rights reserved.</span>
+            <span class="muted">© {{ date('Y') }} {{ config('app.name', 'Pay4Tech IT') }}. All rights reserved.</span>
             <a class="muted-link" href="#top" data-scroll-top>Back to top</a>
         </div>
     </footer>

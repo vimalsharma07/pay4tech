@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Login — ' . config('app.name', 'Payomatix IT'))
+@section('title', 'Login — ' . config('app.name', 'Pay4Tech IT'))
 @section('meta_description', 'Login to access the admin panel.')
 
 @section('content')
