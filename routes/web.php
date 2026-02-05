@@ -9,6 +9,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\SitemapController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,10 +32,24 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{post:slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
+// Valentine: form to enter names, then redirect to card
+Route::get('/valentine', fn () => view('projects.valentine-form'))->name('valentine.form');
+Route::post('/valentine', function (Request $request) {
+    $request->validate([
+        'your_name' => 'required|string|max:100',
+        'love_name' => 'required|string|max:100',
+    ]);
+    $slug = fn ($s) => strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', trim($s)));
+    $first = $slug($request->your_name);
+    $second = $slug($request->love_name);
+    return redirect()->route('valentine', ['first' => $first, 'second' => $second]);
+})->name('valentine.create');
+
 Route::get('/valentine/{first}/{second}', function (string $first, string $second) {
+    $name = fn ($s) => ucwords(str_replace('-', ' ', $s));
     return view('projects.valentine', [
-        'firstName' => ucfirst(strtolower($first)),
-        'secondName' => ucfirst(strtolower($second)),
+        'firstName' => $name($first),
+        'secondName' => $name($second),
     ]);
 })->where(['first' => '[a-zA-Z0-9_-]+', 'second' => '[a-zA-Z0-9_-]+'])->name('valentine');
 
