@@ -97,11 +97,11 @@
       @csrf
       <div class="form-group">
         <label for="your_name">Your name</label>
-        <input type="text" id="your_name" name="your_name" value="{{ old('your_name') }}" placeholder="e.g. Ankit" required autofocus>
+        <input type="text" id="your_name" name="your_name" value="{{ old('your_name') }}" placeholder="e.g. Vimal" required autofocus>
       </div>
       <div class="form-group">
         <label for="love_name">Your love's name</label>
-        <input type="text" id="love_name" name="love_name" value="{{ old('love_name') }}" placeholder="e.g. Pooja" required>
+        <input type="text" id="love_name" name="love_name" value="{{ old('love_name') }}" placeholder="e.g. Bhavana" required>
       </div>
       <button type="submit" class="btn">Create my Valentine card 💖</button>
     </form>
